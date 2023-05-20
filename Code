@@ -1,0 +1,53 @@
+import javax.swing. JOptionPane;	// JOption class
+import  java.text. DecimalFormat;	// keeping proper decimal format
+
+public class Serrano_JovenaMae{       	//class declaration
+	public static void main (String [] args){ // main method where the program starts
+	
+	String name = "";		// variable declaration that holds the string value for name
+	String course = "";		// variable declaration that holds the string value for course
+	String input ="";		// variable declaration that holds the value of string that will be use later on for string convert into integer
+	Double gQz, gSet, gLab, gAss, gPex; // variables that holds the input grades of the user
+	Double gQ, gS, gL, gA, gPr;	// variables that holds  the result from the executed equation 
+	Double preGr;			// variable that holds the value / result for the Prelim Grade 
+	
+	JOptionPane.showMessageDialog(null, "Hello! Lets record your grades"); // output on the dialog box
+	
+	name = JOptionPane.showInputDialog("Student Name :"); 	// read and store of input name 
+	course = JOptionPane.showInputDialog("Course :");	// read and store of input course
+	
+	JOptionPane.showMessageDialog(null, "Input Grades");	// output on the dialog box
+	
+	input = JOptionPane.showInputDialog("Quiz :");		// read and store of input 
+	gQz = Double.parseDouble(input);			// converts the value of input to int
+	gQ = gQz * 0.25;					// value stored in gQz will be multiplied to a given constant and will store to a variable that will use for calculating the prelim grade
+									
+	input = JOptionPane.showInputDialog("Seatwork :");	// read and store of input 
+	gSet = Double.parseDouble(input);			// converts the value of input to int
+	gS = gSet * 0.1;					// value stored in gS will be multiplied to a given constant and will store to a variable that will use for calculating the prelim grade
+									
+	input = JOptionPane.showInputDialog("Lab.Exercise :");	// read and store of input 
+	gLab = Double.parseDouble(input);			// converts the value of input to int
+	gL = gLab * 0.2;					// value stored in gLab will be multiplied to a given constant and will store to a variable that will use for calculating the prelim grade
+									
+	input = JOptionPane.showInputDialog("Assignment :");	// read and store of input 
+	gAss = Double.parseDouble(input);			// converts the value of input to int
+	gA = gAss * 0.05;					// value stored in gAss will be multiplied to a given constant and will store to a variable that will use for calculating the prelim grade
+									
+	input = JOptionPane.showInputDialog("Prelim Exam :");	// read and store of input 
+	gPex = Double.parseDouble(input);			// converts the value of input to int
+	gPr = gPex * 0.4;					// value stored in gPr will be multiplied to a given constant and will store to a variable that will use for calculating the prelim grade
+								
+	preGr = gQ + gS + gL + gA + gPr;			//compute the over all prelim grade
+	DecimalFormat d = new DecimalFormat("#.##");		//for decimal format
+	
+	// output all information into a single dialog box with the prelim grade computed 
+	JOptionPane.showMessageDialog(null, "Student Name : " + name +"\nCourse : " + course +"\nGrades\n" + "\nQuiz : " + gQz +
+	"\nSeatwork : " + gSet + "\nLab.Exercise : " + gLab + "\nAssignment : " + gAss + "\nPrelim Exam : " + gPex +
+	"\n" + "\nPrelim Grade : " + d.format(preGr));
+	// for some encouragement quote after the program executed
+	JOptionPane.showMessageDialog(null, "Success is not final, failure is not fatal: it is the courage to continue that counts." + "\nWinston Churchill" + "\nGOODLUCK!");
+	
+	System.exit(0); // exit the program execution 
+	}
+}
